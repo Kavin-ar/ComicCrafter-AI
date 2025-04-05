@@ -1,3 +1,7 @@
+**ComicCrafter AI Output Demo Video**
+
+Link: https://drive.google.com/file/d/1Hb3J-SfHZ17VQpY8_dNz0J-yfWDkuxuf/view?usp=sharing
+
 **ComicCrafter AI - User Manual**
 
 **1. Introduction**

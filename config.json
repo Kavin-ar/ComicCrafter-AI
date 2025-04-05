@@ -1,0 +1,20 @@
+{
+    "story_model_path": "mistralai/Mistral-7B-Instruct-v0.2",
+    "image_model_path": "stabilityai/stable-diffusion-xl-base-1.0",
+    "disable_safety_checker": true,
+    "default_settings": {
+        "temperature": 0.7,
+        "num_inference_steps": 30,
+        "guidance_scale": 7.0,
+        "image_width": 1024,
+        "image_height": 768,
+        "negative_prompt": "text, words, letters, signature, watermark, blurry, deformed, bad anatomy, disfigured, poorly drawn face, mutation, mutated, extra limb, ugly, poorly drawn hands, missing limb, blurry, floating limbs, disconnected limbs, malformed hands, out of focus, long neck, long body, duplicate, cropped, low quality, jpeg artifacts, multiple panels, frame, border, username, artist name, error, glitch, noise, tiling, stereotype, caricature, biased depiction, duplicate characters, multiple instances of same character, clones, multiple views, multiple views of the same character, grid, multiple images, multiple scenes"
+    },
+    "prompt_template": {
+        "narrative_prompt_template": "Write a short comic book story narrative (200-400 words) based on the user prompt: \"{user_prompt}\". Feature the character(s): {character_str}. The story must be neutral, unbiased, and avoid stereotypes. Output ONLY the story narrative itself, covering a beginning, middle, and end. Do not add a title or moral here.",
+        "title_prompt_template": "Based on the following story narrative, generate ONLY a concise and fitting title (5 words maximum):\n\n---\n{story_narrative}\n---\n\nTitle:",
+        "moral_prompt_template": "Based on the following story narrative, generate ONLY a brief moral or theme (1-2 sentences maximum):\n\n---\n{story_narrative}\n---\n\nMoral:",
+        "panel_prompt_template": "Given the overall story context, generate ONLY a **VERY concise visual description (MAXIMUM 60 words)** for a comic book style image for Panel {panel_num} of {num_panels}. This description is for an AI image generator. Describe the scene naturally, avoiding unnecessary duplication of characters unless context demands it.\n\n**Overall User Prompt:** \"{user_prompt}\"\n**Key Characters:** {character_str}\n**Relevant Story Context (Focus on the {stage} stage):** \"{story_context}\"\n\n**Instructions for Panel {panel_num} Visual Description:**\n1. **Visual Focus:** Describe the scene VISUALLY - character appearance/action/emotion, environment, lighting, composition (e.g., wide shot, close-up).\n2. **EXTREME CONCISENESS:** 60 words MAXIMUM. Be descriptive but EXTREMELY brief.\n3. **Output ONLY Description:** Output *only* the visual description text. NO intro phrases like 'Panel X:', NO lists, NO explanations, NO panel numbers, NO brackets, NO markdown.\n4. **NO Text/Sound:** Do NOT include dialogue, sound effects, captions, words, speech bubbles.\n5. **Anti-Bias:** AVOID STEREOTYPES. Be neutral.\n\nPanel {panel_num} Visual Description:",
+        "dialogue_prompt_template": "You are writing dialogue for a comic book panel. Given the visual description of the panel and the overall story context, write a single, short line of dialogue (max 25 words) that ONE character might be saying. Ensure the dialogue is specific to this panel's context and distinct from other panels. Output ONLY the dialogue text. If no dialogue fits, output 'NONE'.\n\n**Characters Present:** {character_str}\n**Panel Visual Description:** \"{panel_description}\"\n**Story Context:** \"{story_context}\"\n\nDialogue:"
+    }
+}
